@@ -95,6 +95,7 @@ section#kast2 {
     padding: 1%;
     border-radius: 20px 120px 20px 20px;
     text-align: center;
+    background-color: #1394d6;
 
 }
 
@@ -133,5 +134,58 @@ section#kast6 {
     padding: 1%;
     border-radius: 50px 50px 20px 20px;
     text-align: center;
+}
 
+section#pildigalerii {
+    border: 1px groove lightgray; /* solid, double, dashed, dotted*/
+    width: 1000px;
+    margin: 5px;
+    padding: 1%;
+    border-radius: 20px 20px 20px 20px;
+    text-align: center;
+    background-color: #1394d6;
+    position: absolute;
+    top: 350px;
+    left: 700px;
+}
+section#video {
+
+    border: 1px groove lightgray; /* solid, double, dashed, dotted*/
+    width: 600px;
+
+    margin: 5px;
+    padding: 1%;
+    border-radius: 20px 20px 20px 20px;
+    text-align: center;
+    background-color: #a11212;
+    position: absolute;
+    top: 350px;
+    left: 5px;
+}
+
+section#muusika{
+    border: 1px groove lightgray; /* solid, double, dashed, dotted*/
+    width: 600px;
+
+    margin: 5px;
+    padding: 1%;
+    border-radius: 20px 20px 20px 20px;
+    text-align: center;
+    background-color: #ff9f87;
+    position: absolute;
+    top: 750px;
+    left: 5px;
+}
+section#kaart{
+    border: 1px groove lightgray; /* solid, double, dashed, dotted*/
+    width: 600px;
+
+    margin: 5px;
+    padding: 1%;
+    border-radius: 20px 20px 20px 20px;
+    text-align: center;
+    background-color: #e1ff87;
+    position: absolute;
+    top: 1050px;
+    left: 950px;
 }
