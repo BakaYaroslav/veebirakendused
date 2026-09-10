@@ -7,7 +7,6 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    /* Узор и светлый градиент на фоне */
     background-color: #f8fafc;
     background-image:
             radial-gradient(#cbd5e1 1px, transparent 1px),
@@ -86,18 +85,17 @@ header::after {
     font-weight: 500;
 }
 
-/* 4. Четкая сетка main */
+/* 4. Гибкая сетка main (работает универсально для всех страниц) */
 main {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: 24px;
-    align-items: start;
 }
 
-/* 5. Общие стили карточек */
+/* 5. Общие стили карточек и секций */
 section {
     background-color: #ffffff;
     border: 1px solid #e2e8f0;
@@ -114,62 +112,39 @@ section:hover {
     box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.1);
 }
 
-section h2 {
+section h2, section h3 {
     font-size: 1.25rem;
     color: #0f172a;
-    margin-bottom: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    margin-bottom: 14px;
 }
 
-section h2::after {
-    content: "2026";
-    font-size: 0.75rem;
-    background: #eff6ff;
-    color: #2563eb;
-    padding: 3px 8px;
-    border-radius: 12px;
-    font-weight: 600;
+/* Картинки внутри блоков */
+section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 10px 0;
 }
 
-/* Расположение основных блоков */
-section#kast1, section#kast2 { grid-column: span 12; }
-section#kast3, section#kast4, section#kast5, section#kast6 { grid-column: span 3; }
-
-/* 6. Блок галереи (во всю ширину, картинки в 2 столбика) */
-section#pildigalerii {
-    grid-column: span 12;
+/* 6. Галерея картинок */
+section#pildigalerii, .galerii-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 16px;
 }
 
-section#pildigalerii h2 {
-    grid-column: 1 / -1;
-    margin-bottom: 8px;
-}
-
-section#pildigalerii img {
+section#pildigalerii img, .galerii-grid img {
     width: 100%;
     height: 220px;
     object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 0;
-    display: block;
-    margin-left: 200px;
-    margin-top: 2px;
+    margin: 5px;
 }
 
-/* 7. Блок с видео (СНИЗУ под галереей) */
-section#video {
-    grid-column: span 12;
-}
-
-/* 8. Интерактивные фреймы (YouTube, Google Maps, Spotify) */
+/* 7. Интерактивные фреймы и видео */
 section iframe,
 section video {
-    width: 100% !important;
+    width: 100%;
     max-width: 100%;
     border-radius: 10px;
     border: none;
@@ -181,22 +156,19 @@ section#video iframe {
     height: auto;
 }
 
-section#kaart { grid-column: span 6; }
-section#kaart iframe {
-    height: 250px;
-}
-
-section#muusika { grid-column: span 6; }
-section#muusika iframe {
-    height: 152px;
+/* Сетки для двух колонок (карта + музыка и т.д.) */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
 }
 
 /* Ссылки-кнопки */
 section a {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     padding: 10px 14px;
-    margin-bottom: 8px;
+    margin: 4px 0;
     background-color: #f8fafc;
     border: 1px solid #e2e8f0;
     border-radius: 8px;
@@ -219,7 +191,7 @@ section a:hover {
     border-color: #2563eb;
 }
 
-/* 9. Подвал */
+/* 8. Подвал */
 footer {
     position: fixed;
     bottom: 0;
@@ -232,9 +204,10 @@ footer {
     padding: 12px;
     font-size: 0.85rem;
     color: #64748b;
+    z-index: 100;
 }
 
-/* Адаптивность */
+/* 9. Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
     body {
         padding-left: 0;
@@ -251,12 +224,7 @@ footer {
         width: 100%;
     }
 
-    section#pildigalerii {
+    .grid-2 {
         grid-template-columns: 1fr;
-    }
-
-    section#kaart, section#muusika,
-    section#kast3, section#kast4, section#kast5, section#kast6 {
-        grid-column: span 12;
     }
 }
