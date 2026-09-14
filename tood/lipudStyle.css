@@ -1,0 +1,17 @@
+#Eesti {
+    width: 330px;
+    height: 210px;
+    border: 1px solid lightgray;
+    border-spacing: 0;
+}
+
+/* pseudoelementide kasutamine*/
+#Eesti tr:nth-child(1) {
+    background-color: darkblue;
+}
+#Eesti tr:nth-child(2) {
+    background-color: black;
+}
+#Eesti tr:nth-child(3) {
+    background-color: white;
+}
