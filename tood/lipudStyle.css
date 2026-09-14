@@ -120,17 +120,19 @@
 }
 #Island tr:nth-child(2) {
     background-color: white;
-    height: 30px;
+    height: 20px;
 }
 
-#Island tr:nth-child(1)  td:nth-child(5),  #Island tr:nth-child(5)  td:nth-child(5){
-    background-color: darkblue;
-    width: 20px;
 
+
+#Island tr:nth-child(4) {
+    background-color: white;
+    height: 20px;
 }
-#Island tr:nth-child(5)  td:nth-child(5){
+
+#Island tr:nth-child(1)  td:nth-child(5),  #Island tr:nth-child(5)  td:nth-child(4),  #Island tr:nth-child(5)  td:nth-child(3),  #Island tr:nth-child(5)  td:nth-child(2){
     background-color: darkblue;
-    width: 20px;
+    width: 50px;
 
 }
 
@@ -142,13 +144,23 @@
     background-color: white;
     width: 20px;
 }
-#Island tr:nth-child(3)  td:nth-child(1){
+
+
+#Island tr:nth-child(3) {
     background-color: red;
-    width: 20px;
+    height: 20px;
+
 }
+
 
 #Island tr:nth-child(1)  td:nth-child(3){
     background-color: red;
     width: 20px;
+
 }
+
+#Island td{
+    border: 0;
+}
+
 

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <title>Map area</title>
+</head>
+<body>
+<h1>Map area kasutamine</h1>
+<h2>Tuleb klikida korpus, kuuler, korpusi jalg.
+  Teine piltil tuleb klikida laualamp, klaviatuur ja laptop </h2>
+<img src="arvutiPilt.jpg" alt="arvuti pilt" usemap="#arvuti">
+<map name="arvuti">
+  <area shape="circle" coords="140, 190, 40" href="https://ruumistruumi.ee/pood/arvuti-rgb-ventilaator-darkflash-dr08-120-mm-must/" alt="kuuler" target="_blank">
+  <!-- circle coords = (x, y, R) -->
+  <area shape="rect" coords="220, 30, 333, 400" href="korpus.html" alt="Korpus">
+  <!-- rect coords = (x, y, x2, y2) -->
+  <area shape="rect" coords="110, 390, 125, 400" href="korpusiJalg.html" alt="korpusiJalg">
+</map>
+<img src="arvuti2.jpg" alt="arvuti2" usemap="#arvuti2">
+<map name="arvuti2">
+  <area shape="circle" coords="100, 80, 30" href="laualamp.html" alt="laualamp" >
+  <area shape="poly" coords="70, 350, 150, 350, 140, 370, 70, 360" href="klaviatuur.html" alt="klavatuur">
+  <area shape="poly" coords="210, 190, 300, 200, 300, 300, 230, 320, 130, 300, 200, 280" href="laptop.html" alt="laptop">
+
+<div>Sa nuppusid laualampi peale</div>
+</map>
+</body>
+</html>
