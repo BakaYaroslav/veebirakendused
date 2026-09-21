@@ -3,11 +3,12 @@ form{
     border-radius: 30px;
 }
 table, td{
+
     border-collapse: collapse;
     width: 30%;
     padding: 10px;
     border-radius: 4px;
-    background-color: antiquewhite;
+    background: linear-gradient(to right, #c19b9b, #e69a7d 1px, #c67c7c 110%);
     border-color: brown;
 }
 input[type=text], input[type=date]{
@@ -19,8 +20,36 @@ label{
     font-weight: bold;
 }
 
-input[type=radio]:hover, input[type=radio]:focus{
-    width: 20px;
-    height: 20px;
+input[type=radio]:hover+label{
+    background: #cf6d6d;
+    color: white;
+    font-weight: bold;
 
+}
+
+input[type=checkbox]:hover+label{
+    background: #cf6d6d;
+    color: white;
+    font-weight: bold;
+
+}
+
+
+input[type=checkbox]+label, input[type=radio]+label{
+    background: #ededed;
+    font-size: 10pt;
+    padding: 3px;
+    width: 60px;
+    height: 20px;
+    border-radius: 3px;
+    border: 1px solid #9f6b6b;
+    cursor: pointer;
+    line-height: 40px;
+
+}
+
+div{
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 160px;
 }
