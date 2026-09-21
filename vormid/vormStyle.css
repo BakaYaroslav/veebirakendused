@@ -1,0 +1,26 @@
+form{
+    text-align: left;
+    border-radius: 30px;
+}
+table, td{
+    border-collapse: collapse;
+    width: 30%;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: antiquewhite;
+    border-color: brown;
+}
+input[type=text], input[type=date]{
+    border: 1px solid #9f6b6b;
+    border-radius: 4px;
+    padding: 5px;
+}
+label{
+    font-weight: bold;
+}
+
+input[type=radio]:hover, input[type=radio]:focus{
+    width: 20px;
+    height: 20px;
+
+}
