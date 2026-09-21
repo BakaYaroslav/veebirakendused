@@ -3,26 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <title>Map area</title>
+  <link rel="stylesheet" href="mapareaStyle.css">
 </head>
 <body>
 <h1>Map area kasutamine</h1>
 <h2>Tuleb klikida korpus, kuuler, korpusi jalg.
   Teine piltil tuleb klikida laualamp, klaviatuur ja laptop </h2>
-<img src="arvutiPilt.jpg" alt="arvuti pilt" usemap="#arvuti">
+<img id="arvuti1" src="arvutiPilt.jpg" alt="arvuti pilt" usemap="#arvuti">
 <map name="arvuti">
-  <area shape="circle" coords="140, 190, 40" href="https://ruumistruumi.ee/pood/arvuti-rgb-ventilaator-darkflash-dr08-120-mm-must/" alt="kuuler" target="_blank">
+  <area shape="circle" coords="140,190,40" href="https://ruumistruumi.ee/pood/arvuti-rgb-ventilaator-darkflash-dr08-120-mm-must/" alt="kuuler" target="_blank">
   <!-- circle coords = (x, y, R) -->
-  <area shape="rect" coords="220, 30, 333, 400" href="korpus.html" alt="Korpus">
+  <area shape="rect" coords="220,30,333,400" href="korpus.html" alt="Korpus">
   <!-- rect coords = (x, y, x2, y2) -->
-  <area shape="rect" coords="110, 390, 125, 400" href="korpusiJalg.html" alt="korpusiJalg">
-</map>
-<img src="arvuti2.jpg" alt="arvuti2" usemap="#arvuti2">
-<map name="arvuti2">
-  <area shape="circle" coords="100, 80, 30" href="laualamp.html" alt="laualamp" >
-  <area shape="poly" coords="70, 350, 150, 350, 140, 370, 70, 360" href="klaviatuur.html" alt="klavatuur">
-  <area shape="poly" coords="210, 190, 300, 200, 300, 300, 230, 320, 130, 300, 200, 280" href="laptop.html" alt="laptop">
 
-<div>Sa nuppusid laualampi peale</div>
+</map>
+<img id="arvuti" src="arvuti2.jpg" alt="arvuti2" usemap="#arvuti2">
+<map name="arvuti2">
+  <area shape="circle" coords="100,80,30" href="laualamp.html" alt="laualamp">
+  <area shape="poly" coords="70,350,150,350,140,370,70,360" href="klaviatuur.html" alt="klaviatuur">
+  <area shape="poly" coords="210,190,300,200,300,300,230,320,130,300,200,280" href="laptop.html" alt="laptop">
+  <area shape="circle" coords="100,170,40" href="pastakad.html" alt="pastakad">
+
+  <div id="laualamp">
+    Laualamp on kohtvalgusti, mis enamasti seisab laual.
+
+    Kirjutus- või lugemislaual seisvad lambid on mõeldud peamiselt lauapinda ja sellel olevat valgustama. Sellised lambid on tavaliselt sellise ehitusega, et nende valgust saaks lihtsasti suunata. Mõned seda liiki laualambid on ilma aluseta, kuid muul viisil kinnitatavad laua lähedale.
+
+    Laualamp võib olla ette nähtud ka selleks, et (hämaralt) valgustada kogu ümbritsevat ruumi, luua meeleolu jne. Sellised lambid on tihti kunstiliselt kujundatud, nende valgusallikat varjab osaliselt või täielikult lambivari.
+
+    Laualampi on võimalik kergesti teisaldada. Tavaliselt on laualamp ühendatud juhtmega vooluvõrku, see eeldab seinakontakti lähedust ja piisavalt pikka juhet. Lambi lüliti võib olla aluse või juhtme küljes.
+    <img src="laualamp.jpg" alt="laualamp">
+    <br>
+    <a href="..\index.html">Kodulehele</a>
+  </div>
+
 </map>
 </body>
 </html>

@@ -1,0 +1,118 @@
+h1{
+    text-align: center;
+}
+h2{
+    text-align: center;
+}
+
+div{
+    background-color: #fa8b5c;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+}
+
+div#pen img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+}
+
+div#klaviatuur{
+    background-color: #c8a998;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+}
+
+div#klaviatuur img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+}
+div#laualamp{
+    background-color: #754122;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+    height: 550px;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+}
+
+div#laualamp img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    top: 60%;
+    left: 20%;
+}
+
+div#korpus{
+    background-color: #3d515e;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+    height: 400px;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+}
+
+div#korpus img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+}
+
+div#laptop{
+    background-color: #4781a3;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+}
+
+div#laptop img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    top: 55%;
+    left: 20%;
+}
+
+
+
