@@ -12,7 +12,6 @@ function nimiLugemiseKastist() {
 
 // radio valikud
 function radioValik() {
-    // Исправлено name="kuulamine" -> name="platvorm"
     let kuulamine = document.querySelector('input[name="platvorm"]:checked');
     let vastus2 = document.getElementById("vastus2");
 
@@ -21,14 +20,31 @@ function radioValik() {
         vastus2.innerHTML = "Sinu valik: " + value;
         vastus2.style.backgroundColor = "lightblue";
     }
-
     return value;
 }
+
+function radioValikPilt2() {
+    logo=[
+        'https://m.media-amazon.com/images/I/51rttY7a+9L.png',
+        'https://www.gannett-cdn.com/media/2016/06/14/USATODAY/USATODAY/636015190457589047-soundcloud-icon.png'
+
+    ]
+    let platvorm = document.getElementsByName("platvorm");
+    let valitudPilt = document.getElementById("valitudPilt");
+
+    for (let i = 0; i < platvorm.length; i++) {
+        if (platvorm[i].checked) {
+            valitudPilt.src = logo[i];
+            break;
+        }
+    }
+}
+
+
 
 // checkbox valik
 function checkboxValik() {
     let vastus3 = document.getElementById("vastus3");
-    // Добавлено .checked
     let rollingstones = document.getElementById("rollingstones").checked;
     let Rammstein = document.getElementById("Rammstein").checked;
     let ImagineDragons = document.getElementById("ImagineDragons").checked;
@@ -102,7 +118,6 @@ function puhastaVorm() {
     let vastusKoik = document.getElementById("vastusKoik");
     if (vastusKoik) vastusKoik.innerHTML = "";
 
-    // Очистка отдельных блоков результатов (если они есть на странице)
     ["vastus1", "vastus2", "vastus3", "vastus4", "vastus5"].forEach(id => {
         let el = document.getElementById(id);
         if (el) el.innerHTML = "";

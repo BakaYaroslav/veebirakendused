@@ -1,0 +1,42 @@
+img#randomPilt { /*id = randomPilt*/
+    border: 5px solid lightgreen;
+    border-radius: 50%;
+    width: 200px;
+}
+
+input[type=button] {
+    border: 5px solid #2e732e;
+    border-radius: 50%;
+    width: 100px;
+    padding: 10px;
+    background-color: #96cc96;
+}
+select {
+    border: 5px solid #2e732e;
+    border-radius: 50%;
+    width: 150px;
+    padding: 10px;
+    background-color: #96cc96;
+    text-align: center;
+}
+div {
+    border: 5px solid #2e732e;
+    border-radius: 10%;
+    width: 110px;
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+    margin-left: 98px;
+}
+
+label:hover {
+    font-weight: bold;
+    background-color: #bdf3bd;
+
+}
+
+section#valik2{
+    border: 5px solid #2e732e;
+    width: 300px;
+    margin-top: 50px;
+}
