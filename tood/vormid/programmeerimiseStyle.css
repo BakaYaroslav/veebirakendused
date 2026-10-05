@@ -1,0 +1,22 @@
+form{
+    text-align: left;
+    border-radius: 30px;
+}
+table, td{
+    border-collapse: collapse;
+    width: 30%;
+    padding: 10px;
+    border-radius: 4px;
+    background: linear-gradient(to right, #c19b9b, #e69a7d 1px, #c67c7c 110%);
+    border-color: brown;
+}
+
+table tr td{
+    border: 1px solid black;
+}
+
+
+img {
+    width: 100px;
+    height: 100px;
+}

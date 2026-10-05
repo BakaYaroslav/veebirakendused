@@ -18,7 +18,7 @@ function selectValik() {
     let valik = document.getElementById('valik');
     let randomPilt = document.getElementById('randomPilt');
 
-    if (randomPilt.getAttribute('src') == valik.value) {
+    if (randomPilt.getAttribute('src') === valik.value) {
         vastus.innerHTML = "ÕIGE!";
         vastus.style.color = "green";
         vastus.style.borderColor = "green";
