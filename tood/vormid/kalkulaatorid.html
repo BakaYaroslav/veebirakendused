@@ -6,11 +6,12 @@
     <link rel="stylesheet" href="kalkStyle.css">
     <script src="../../js/kalk1Script.js"></script>
     <script src="../../js/kalk2Script.js"></script>
+    <script src="../../js/kalk3Script.js"></script>
 </head>
 <body>
 
 <h1>Kalkulaatorid</h1>
-<section id="yld">
+<div id="yld">
     <!-- css paigus flex row -->
     <section id="kalk1">
         <h2>Meetri/tolli kalkulaator</h2>
@@ -23,7 +24,7 @@
         <input type="radio" name="valik" id="tolli" value="tolli" onchange="teisendamine()">
         <label for="tolli">Toll</label>
         <div id="vastus"></div>
-        <img src="" alt="" id="vastusepilt">
+        <img src="https://media.istockphoto.com/id/1344687455/vector/question-sing-flat-icon-vector-illustration-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=ZU6kq0hQacI7mZoYuXTqXF8KsgNnbCRaxDm_nAIdCAw=" alt="" id="vastusepilt">
 
     </section>
 
@@ -33,7 +34,7 @@
         <label for="kogus">Mitu tk soovid: </label>
         <input type="number" id="kogus" min="1" max="100" step="1" value="1">
         <label for="joogivalik"> Vali lemmikjook: </label>
-        <select name="joogivalik" id="joogivalik" onchange="Jookidevalik()">
+        <select name="joogivalik" id="joogivalik" oninput="Jookidevalik()">
             <option value="">vali</option>
             <option value="kohv">Kohv</option>
             <option value="vesi">Vesi</option>
@@ -45,8 +46,89 @@
 
 
     </section>
-    <section id="kalk3">kalk3</section>
-</section>
+    <section id="kalk3">
+        <h2>Pindala ja ruumala kalkulaator</h2>
+
+
+        <input type="radio" name="kujundivalik" id="Pindala" value="Pindala" oninput="kujundiRadioNupp()">
+        <label for="Pindala">Pindala</label>
+        <br>
+        <input type="radio" name="kujundivalik" id="Ruumala" value="Ruumala" oninput="kujundiRadioNupp()">
+        <label for="Ruumala">Ruumala</label>
+        <br>
+        <div id="kujundi-blokk" style="display: none;">
+
+                <label for="pindalakujundivalik">Vali kujund:</label>
+                <select name="pindalakujundivalik" id="pindalakujundivalik" oninput="Kujundivalik()">
+                    <option value="">vali</option>
+                    <option value="ring">Ring</option>
+                    <option value="kolmnurk">Kolmnurk</option>
+                    <option value="ruut">Ruut</option>
+                    <option value="roopkylik">Rõõpkülik</option>
+                </select>
+
+                <br>
+
+                <label for="ruumalakujundivalik"></label>
+                <select name="ruumalakujundivalik" id="ruumalakujundivalik" oninput="Kujundivalik()">
+                    <option value="">vali</option>
+                    <option value="prisma">Prisma</option>
+                    <option value="pyramiid">Püramiid</option>
+                    <option value="koonus">Koonus</option>
+                    <option value="sfaar">Sfäär</option>
+                </select>
+
+        <br>
+</div>
+
+        <!--tavalised kuujundid-->
+        <div id="kolmnurk-andmed" style="display: none;">
+            <label>Külg a: <input type="number" step="any" value="1" id="kolmnurk-a" oninput="kolmnurk()"></label>
+            <br>
+            <label>Külg b: <input type="number" step="any" value="1" id="kolmnurk-b" oninput="kolmnurk()"></label>
+            <br>
+            <label>Külg c: <input type="number" step="any" value="1" id="kolmnurk-c" oninput="kolmnurk()"></label>
+        </div>
+        <div id="ruut-andmed" style="display: none;">
+            <label>Külg a: <input type="number" step="any" value="1" id="ruut-a" oninput="ruut()"></label>
+        </div>
+
+        <div id="ring-andmed" style="display: none;">
+            <label>Raadius r: <input type="number" step="any" value="1" id="ring-r" oninput="ring()"></label>
+        </div>
+        <div id="roopkylik-andmed" style="display: none;">
+            <label>Alus a: <input type="number" step="any" value="1" id="roopkylik-a" oninput="roopkylik()"></label>
+            <br>
+            <label>Kõrgus h: <input type="number" step="any" value="1" id="roopkylik-h" oninput="roopkylik()"></label>
+        </div>
+
+        <!--ruumalad kuujundid-->
+        <div id="prisma-andmed" style="display: none;">
+            <label>Põhi S: <input type="number" step="any" value="1" id="prisma-pohis" oninput="prisma()"></label>
+            <br>
+            <label>Kõrgus h: <input type="number" step="any" value="1" id="prisma-h" oninput="prisma()"></label>
+        </div>
+
+        <div id="pyramiid-andmed" style="display: none;">
+            <label>Põhi S: <input type="number" step="any" value="1" id="pyramiid-pohis" oninput="pyramiid()"></label>
+            <br>
+            <label>Kõrgus h: <input type="number" step="any" value="1" id="pyramiid-h" oninput="pyramiid()"></label>
+        </div>
+
+        <div id="koonus-andmed" style="display: none;">
+            <label>Raadius r: <input type="number" step="any" value="1" id="koonus-r" oninput="koonus()"></label>
+            <br>
+            <label>Kõrgus h: <input type="number" step="any" value="1" id="koonus-h" oninput="koonus()"></label>
+        </div>
+
+        <div id="sfaar-andmed" style="display: none;">
+            <label>Raadius r: <input type="number" step="any" value="1" id="sfaar-r" oninput="sfaar()"></label>
+        </div>
+
+        <div id="vastus3"></div>
+
+    </section>
+</div>
 
 </body>
 </html>

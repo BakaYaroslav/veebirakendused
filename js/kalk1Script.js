@@ -2,6 +2,7 @@ function teisendamine() {
     let vastus = document.getElementById("vastus");
     let valik = document.getElementsByName("valik"); //mitu elementi ühe nimega
     let arv = document.getElementById("arv");
+
     const toll = 39.37;
     const meeter = 0.0254;
     //tsükli

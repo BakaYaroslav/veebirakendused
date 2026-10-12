@@ -1,4 +1,4 @@
-section#yld {
+div#yld {
     display: flex;
     flex-direction: row;
     gap: 10px;
@@ -19,7 +19,7 @@ section#kalk2 {
     border-radius: 10px;
     width: 30%;
     padding: 5px;
-    background-color: lightgray;
+    background: linear-gradient(to right, #000000, #d8d2bd 1px, #aca717 110%);
 }
 
 section#kalk3 {
@@ -27,11 +27,21 @@ section#kalk3 {
     border-radius: 10px;
     width: 30%;
     padding: 5px;
-    background-color: lightgray;
+    background: linear-gradient(to right, #000000, #d8d2bd 1px, #ac5517 110%);
 }
 
 img#vastusepilt{
     height: 100px;
     width: 100px;
+    position: absolute;
+    top: 120px;
+    left: 300px;
+    border: 1pt solid #3b4a55;
+
 }
+/*eelamlab pilt enne pilti loomine*/
+img:not([src]), img[src=""] {
+    display: none;
+}
+
 
