@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <title>Raamatukogu ülesanne</title>
+  <script src="../../js/oop.js"></script>
+</head>
+<body>
+
+<h1>Raamatukogu funktsioonid</h1>
+
+<input type="button" value="Kuva kõik raamatud" onclick="kuvaKõikRaamatud()">
+<div id="vastus1"></div>
+<br>
+
+<input type="button" value="Raamatute koguarv" onclick="kuvaKoguarv()">
+<div id="vastus2"></div>
+<br>
+
+<input type="button" value="Pärast 2000. aastat ilmunud" onclick="kuvaParast2000()">
+<div id="vastus3"></div>
+<br>
+
+<input type="button" value="Kõige uuem raamat" onclick="kuvaUuem()">
+<div id="vastus4"></div>
+
+<h3>Lisa uus raamat</h3>
+<input type="text" id="pealkiri" placeholder="Pealkiri">
+<input type="text" id="autor" placeholder="Autor">
+<input type="number" id="aasta" placeholder="Aasta">
+<input type="button" value="Salvesta raamat" onclick="lisaRaamat()">
+<div id="lisaTeade"></div>
+
+</body>
+</html>
