@@ -1,3 +1,7 @@
+body{
+    margin: 0;
+    padding: 0;
+}
 h1{
     font-size: xx-large;
     font-family: Georgia, "Times New Roman", Times, serif;
@@ -166,14 +170,13 @@ section#video {
 section#muusika{
     border: 1px groove lightgray; /* solid, double, dashed, dotted*/
     width: 600px;
-
     margin: 5px;
     padding: 1%;
     border-radius: 20px 20px 20px 20px;
     text-align: center;
     background-color: #ff9f87;
     position: absolute;
-    top: 750px;
+    top: 800px;
     left: 5px;
 }
 section#kaart{
@@ -186,6 +189,6 @@ section#kaart{
     text-align: center;
     background-color: #e1ff87;
     position: absolute;
-    top: 1050px;
-    left: 950px;
+    top: 1100px;
+    left: 700px;
 }
