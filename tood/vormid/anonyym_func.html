@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <title>JS: Anonüümsed funktsioonid | Noolefunktsioonid</title>
+    <script src="../../js/anonnyym_func.js"></script>
+</head>
+<body>
+
+<h1>Funktsioonide ülesanded</h1>
+
+<h3>1. Minu nimi</h3>
+<input type="button" value="Klassikaline" onclick="kuvaNimi1()">
+<input type="button" value="Noolefunktsioon" onclick="kuvaNimi2()">
+<div id="vastus1"></div>
+
+<h3>2. Kuupäev eesti keeles</h3>
+<input type="text" id="kuupaev" placeholder="19.07.25">
+<input type="button" value="Kuva" onclick="kuvaKuupaev()">
+<div id="vastus2"></div>
+
+<h3>3. Arvude koguarv ja keskmine</h3>
+<input type="text" id="arvud" placeholder="nt 5, 8, 12, 3">
+<input type="button" value="Arvuta" onclick="kuvaArvud()">
+<div id="vastus3"></div>
+
+<h3>4. Salajane sõnum</h3>
+<input type="text" id="sonum" placeholder="Kirjuta sõnum">
+<input type="button" value="Krüpteeri" onclick="kuvaSalajane()">
+<div id="vastus4"></div>
+
+<h3>5. Unikaalsed nimed</h3>
+<input type="button" value="Leia unikaalsed" onclick="kuvaUnikaalsed()">
+<div id="vastus5"></div>
+
+</body>
+</html>
