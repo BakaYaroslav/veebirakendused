@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <title>Muusika küsimustik</title>
+    <link rel="stylesheet" href="kysimustikStyle.css">
+    <script src="../js/kysimustikScript.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"></script>
+    <script>
+        $(function() {
+            $('.viga').hide();
+
+            $('#submitBtn').click(function(event) {
+                if ($('#nimi').val().trim().length < 1) {
+                    $('#vigaNimi').show();
+                    event.preventDefault();
+                } else {
+                    $('#vigaNimi').hide();
+                }
+                if ($('#stiil').val() === 'vali') {
+                    $('#vigaStiil').show();
+                    event.preventDefault();
+                } else {
+                    $('#vigaStiil').hide();
+                }
+                if ($('input[name="platvorm"]:checked').length < 1) {
+                    $('#vigaPlatvorm').show();
+                    event.preventDefault();
+                } else {
+                    $('#vigaPlatvorm').hide();
+                }
+                if ($('input[name="lemmikud"]:checked').length < 1) {
+                    $('#vigaLemmikud').show();
+                    event.preventDefault();
+                } else {
+                    $('#vigaLemmikud').hide();
+                }
+                if ($('#phone').val().trim().length < 10) {
+                    $('#vigaPhone').show();
+                    event.preventDefault();
+                } else {
+                    $('#vigaPhone').hide();
+                }
+
+                if (kontrolli_email($('#email').val().trim())) {
+                    $('#vigaEmail').hide();
+                } else {
+                    $('#vigaEmail').show();
+                    event.preventDefault();
+                }
+
+                if ($('#kuupaev').val().length < 1) {
+                    $('#vigaKuupaev').show();
+                    event.preventDefault();
+                } else {
+                    $('#vigaKuupaev').hide();
+                }
+
+                function kontrolli_email(email) {
+                    var pattern = new RegExp(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]+$/);
+                    return pattern.test(email);
+                }
+            });
+
+            $('input[type="reset"]').click(function() {
+                $('.viga').hide();
+            });
+        });
+
+    </script>
+
+</head>
+<body>
+<h1>Muusika küsimustik</h1>
+<div>HTML vormid ja nupud</div>
+<form action="#">
+    <!-- c + tab = komentaar -->
+    <table>
+        <tr>
+            <td>
+                <!-- Tekstkast -->
+                <label for="nimi">Nimi: </label>
+            </td>
+            <td>
+                <input type="text" id="nimi" placeholder="Yaroslav">
+                <span id="vigaNimi" class="viga">Seda välja ei tohi jätta tühjaks!</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="stiil">Vali meeldivaim muusikastiil</label>
+            </td>
+            <td>
+                <!-- ripploend või rippmenüü (drop down list)-->
+                <select name="stiil" id="stiil">
+                    <option value="vali">vali..</option>
+                    <option value="hiphop">hiphop</option>
+                    <option value="rock">rock</option>
+                    <option value="kantri">kantri</option>
+                    <option value="metal">metal</option>
+                    <option value="jazz">jazz</option>
+                </select>
+                <span id="vigaStiil" class="viga">Palun vali muusikastiil!</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>kuidas sa muusikat peamiselt kuulad?</strong>
+            </td>
+            <td>
+                <!-- radio nupud - 1 valik mitmest-->
+                <br>
+                <input type="radio" name="platvorm" id="spotify" value="https://m.media-amazon.com/images/I/51rttY7a+9L.png" onclick="radioValikPilt2()">
+                <label for="spotify">spotify</label>
+                <br>
+                <input type="radio" name="platvorm" id="soundcloud" value="https://www.gannett-cdn.com/media/2016/06/14/USATODAY/USATODAY/636015190457589047-soundcloud-icon.png" onclick="radioValikPilt2()">
+                <label for="soundcloud">soundcloud</label>
+                <br>
+                <span id="vigaPlatvorm" class="viga">Vali vähemalt üks variant!</span>
+                <img src="" alt="" id="valitudPilt">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <!-- checkbox markerruut -->
+                <fieldset>
+                    <legend>Tee oma valikud - lemmik ansambe</legend>
+                    <input type="checkbox" name = "lemmikud" id="rollingstones" oninput="checkboxValik()">
+                    <label for="rollingstones">rollingstones</label>
+                    <br>
+                    <input type="checkbox" name = "lemmikud" id="Rammstein" oninput="checkboxValik()">
+                    <label for="Rammstein">Rammstein</label>
+                    <br>
+                    <input type="checkbox" name = "lemmikud" id="ImagineDragons" oninput="checkboxValik()">
+                    <label for="ImagineDragons">ImagineDragons</label>
+                    <br>
+                    <input type="checkbox" name = "lemmikud" id="ACDC" oninput="checkboxValik()">
+                    <label for="ACDC">ACDC</label>
+                    <br>
+                    <span id="vigaLemmikud" class="viga">Vali vähemalt üks ansambel!</span>
+                </fieldset>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <!-- range - vahemik -->
+                <label for="tund">
+                    Mitu tundi päevas sa kuulad muuskat?
+                </label>
+            </td>
+            <td>
+                0<input type="range" id="tund" min="0" max="24">24
+            </td>
+        </tr>
+        <tr>
+            <td>  <label for="phone">Sisesta tel. number:</label>
+            </td>
+            <td> <input type="tel" id="phone" name="phone" placeholder="+37212345678">
+                <span id="vigaPhone" class="viga">Sisesta telefoninumber!</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+                <label for="email">Sisesta oma e-mail:</label>
+            </td>
+            <td>
+                <input type="email" id="email" name="email" placeholder="naidis@gmail.com">
+                <span id="vigaEmail" class="viga">Sisesta korrektne e-mail!</span>
+            </td>
+        <tr>
+            <td>
+                <label for="myfile">Vali oma lemmikmuusika:</label>
+
+            </td>
+            <td>
+                <input type="file" id="myfile" name="myfile">
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+                <label for="favcolor">Vali värv millega sa seosed sinu lemmikmuusika</label>
+
+            </td>
+            <td>
+                <input type="color" id="favcolor" name="favcolor">
+            </td>
+        <tr>
+            <td>
+                <label for="kuupaev">Millal sa eelmisel kord kuulasid muusikat?</label>
+
+            </td>
+            <td>
+                <input type="date" id="kuupaev" name="kuupaev">
+                <span id="vigaKuupaev" class="viga">Vali kuupäev!</span>
+            </td>
+        </tr>
+
+        <tr>
+            <td><input type="reset" value="Reset"></td>
+            <td> <input type="submit" id="submitBtn" value="Submit"></td>
+        </tr>
+
+
+        <tr>
+            <td>
+                <input type="button" value="Saada" onclick="naitaKoike()">
+            </td>
+            <td>
+                <input type="reset" value="Puhasta" onclick="puhasta()">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div id="vastusKoik"></div>
+            </td>
+        </tr>
+    </table>
+
+
+</form>
+</body>
+</html>

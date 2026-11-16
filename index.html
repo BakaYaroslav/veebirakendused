@@ -5,8 +5,55 @@
     <meta charset="UTF-8">
     <title>Yaroslav veebirakenduste aluste tööd</title>
     <link rel="stylesheet" href="Style.css">
+    <script
+            src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"></script>
+    <script
+            src="https://code.jquery.com/ui/1.14.2/jquery-ui.min.js"
+            integrity="sha256-mblSWfbYzaq/f+4akyMhE6XELCou4jbkgPv+JQPER2M="
+            crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#kuva").hide();
+            // nuppu peida vajutamine
+            $("#peida").click(function(){
+                $("#kast1, #tere").hide(1000);
+                $(this).hide();
+                $("#kuva").show();
+            });
+            // nuppu kuva vajutamine
+            $("#kuva").click(function(){
+                $("#kast1, #tere").show(1000);
+                $(this).hide();
+                $("#peida").show();
+            });
+        });
+        function koordinat(event, ui){
+            let koht = ui.offset;
+            $('#vastus').html('x: ' + koht.left + 'px,  y: ' + koht.top + 'px');
+        }
+
+        function start(){
+            $("#kast1").draggable(); // lohistada hiirega veebilehel
+            $("#pilt").draggable();
+            $("#pilt").bind("drag", koordinat)
+            $("#kast1").bind("drag", koordinat)
+
+        }
+
+        $(function() {
+            $( "#clickme" ).on( "click", function() {
+                $( "#pilt" ).toggle( "slow", function() {
+                });
+            });
+        });
+
+
+    </script>
 </head>
-<body>
+<body onload="start()">
 <!-- veebilehe sisu-->
 <!-- päis-->
 <header>
@@ -31,8 +78,22 @@
 </nav>
 <!-- põhisisu-->
 <main>
+
+    <section id="kast7">
+        <input type="button" value="<---" id="vasakule" style="display: none" onclick="$('#kast1, h2, p').animate({left:'0px'}, 1000);
+$(this).hide();
+$('#paremale').show();
+">
+        <input type="button" value="--->" id="paremale" onclick="$('#kast1, h2, p').animate({left:'1000px'}, 1000)
+$(this).hide();
+$('#vasakule').show();
+">
+        <input type="button" value="Peida" id="peida" >
+        <input type="button" value="Kuva" id="kuva">
+
+    </section>
     <section id="kast1">
-       <h2>
+       <h2 id="tere">
            Tere tulemast!
        </h2>
         <p>
@@ -42,10 +103,24 @@
     </section>
     <section id="kast2">
         <h3>Põnev pilt</h3>
+        <div id="clickme">
+            Click here
+        </div>
         <div>
-            <img src="Lipp.png" alt="See on Eesti lipp">
+            <img src="Lipp.png" alt="See on Eesti lipp" id="pilt">
         </div>
     </section>
+
+    <section id="selgitus">
+        <h2 id="jquery">jQuery'ga on tehtud</h2>
+        <div>
+        1. draggable pilt 'Lipp',
+        2. nuppud kuva ja peida, mis on seotud kast1'ga (Tere tulrmast!),
+        3. vasakule ja paremale nuppud, mis on seotud ning kast2'ga (Tere tulrmast!),
+        4.  toogle Piltis
+        </div>
+    </section>
+
 </main>
 <!-- jalus-->
 <footer>

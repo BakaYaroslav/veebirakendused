@@ -42,6 +42,15 @@
 
     }
 
+    $( "#clickme" ).on( "click", function() {
+        $( "#book" ).toggle( "slow", function() {
+            // Animation complete.
+        });
+    });
+
+
+
+
 
 
     </script>
@@ -51,7 +60,7 @@
     <h1>jQuery kasutamine </h1>
 </header>
 <main>
-    <input type="button" value="<---" id="vasakule" style="display: none" onclick="$('#sisu, h2').animate({left:'0px'}, 1000);
+    <input type="button" value="<---" id="vasakule" style="display: none" onclick="$('#sisu, h2').animate({left:'300px'}, 1000);
 $(this).hide();
 $('#paremale').show();
 ">
