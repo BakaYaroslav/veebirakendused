@@ -5,8 +5,34 @@
     <meta charset="UTF-8">
     <title>Yaroslav veebirakenduste aluste tööd</title>
     <link rel="stylesheet" href="Style.css">
+    <script
+            src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"></script>
+    <script
+            src="https://code.jquery.com/ui/1.14.2/jquery-ui.min.js"
+            integrity="sha256-mblSWfbYzaq/f+4akyMhE6XELCou4jbkgPv+JQPER2M="
+            crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            $('ul').addClass('ul_kujundus');
+            $('ul li ul li').addClass('li_kujundus');
+
+            $('ul li').hover(
+                function() {
+                    $(this).addClass('hover');
+                },
+                function() {
+                    $(this).removeClass('hover');
+                }
+            );
+        });
+
+    </script>
 </head>
+
 <body>
+
 <!-- veebilehe sisu-->
 <!-- päis-->
 <header>
@@ -23,14 +49,22 @@
         </li>
         <li><a href="lingid.html">Kasulikud lingid</a>
         </li>
-        <li><a href="tood.html">Tehtud tööd</a>
-        </li>
+        <li>
+            <ul id="menyy">
+                <li><a href="#">Tehtud tööd</a>
+                    <ul id="menyy-ul">
+                        <li><a id="tood1" href="tood/vormid/anonyym_func.html">Anonüümsed funktsioonid</a></li>
+                        <li><a id="tood2"   href="joonis/canvas_joonistamine.html">Auto joonis</a></li>
+                        <li><a id="tood3" href="jQuery/jQueryKysimustik.html">jQueryKysimustik</a></li>
+                    </ul>
+                </li>
+            </ul>
         </li>
         <li><a href="meedia.html">meedia</a>
         </li>
-
     </ul>
 </nav>
+
 <!-- põhisisu-->
 <main>
     <section id="kast6">

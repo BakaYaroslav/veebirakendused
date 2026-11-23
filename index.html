@@ -36,10 +36,8 @@
         }
 
         function start(){
-            $("#kast1").draggable(); // lohistada hiirega veebilehel
             $("#pilt").draggable();
             $("#pilt").bind("drag", koordinat)
-            $("#kast1").bind("drag", koordinat)
 
         }
 
@@ -52,6 +50,42 @@
 
 
     </script>
+
+    <script>
+        $(function(){
+            $('ul').addClass('ul_kujundus');
+            $('ul li ul li').addClass('li_kujundus');
+
+            $('ul li').hover(
+                function() {
+                    $(this).addClass('hover');
+                },
+                function() {
+                    $(this).removeClass('hover');
+                }
+            );
+        });
+
+    </script>
+    <script type="text/javascript">
+        $(function() {
+            $('.vihjemull').mouseover(function(e) {
+                var mull = $(this).attr('title');
+                $(this).attr('title', '');
+                $('body').append('<div id="vihje">' + mull + '</div>');
+                $('#vihje').fadeIn('500');
+                $('#vihje').fadeTo('10', 0.9);
+            }).mousemove(function(e) {
+                $('#vihje').css('top', e.pageY + 10);
+                $('#vihje').css('left', e.pageX + 20);
+            }).mouseout(function() {
+                $(this).attr('title', $('#vihje').html());
+                $('#vihje').remove();
+            });
+        });
+
+    </script>
+
 </head>
 <body onload="start()">
 <!-- veebilehe sisu-->
@@ -70,7 +104,17 @@
         </li>
         <li><a href="lingid.html">Kasulikud lingid</a>
         </li>
-        <li><a href="tood.html">Tehtud tööd</a>
+        <li>
+            <ul id="menyy">
+                <li><a href="tood.html">Tehtud tööd</a>
+                    <ul id="menyy-ul">
+                        <li><a id="tood1" href="tood/vormid/anonyym_func.html">Anonüümsed funktsioonid</a></li>
+                        <li><a id="tood2" href="joonis/canvas_joonistamine.html">Auto joonis</a></li>
+                        <li><a id="tood3" href="jQuery/jQueryKysimustik.html">jQueryKysimustik</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
         </li>
         <li><a href="meedia.html">meedia</a>
         </li>
@@ -79,19 +123,6 @@
 <!-- põhisisu-->
 <main>
 
-    <section id="kast7">
-        <input type="button" value="<---" id="vasakule" style="display: none" onclick="$('#kast1, h2, p').animate({left:'0px'}, 1000);
-$(this).hide();
-$('#paremale').show();
-">
-        <input type="button" value="--->" id="paremale" onclick="$('#kast1, h2, p').animate({left:'1000px'}, 1000)
-$(this).hide();
-$('#vasakule').show();
-">
-        <input type="button" value="Peida" id="peida" >
-        <input type="button" value="Kuva" id="kuva">
-
-    </section>
     <section id="kast1">
        <h2 id="tere">
            Tere tulemast!
@@ -103,21 +134,50 @@ $('#vasakule').show();
     </section>
     <section id="kast2">
         <h3>Põnev pilt</h3>
-        <div id="clickme">
-            Click here
-        </div>
-        <div>
-            <img src="Lipp.png" alt="See on Eesti lipp" id="pilt">
+        <div class="vihjemull" title="Kui sa vajutad, sa peidad Eesti lippu"  id="clickme">
+            vajuta siin
         </div>
     </section>
+    <div>
+        <img class="vihjemull" title="Eesti lipp, mis sa saad liikuda" src="Lipp.png" alt="See on Eesti lipp" id="pilt">
+    </div>
 
     <section id="selgitus">
         <h2 id="jquery">jQuery'ga on tehtud</h2>
         <div>
-        1. draggable pilt 'Lipp',
-        2. nuppud kuva ja peida, mis on seotud kast1'ga (Tere tulrmast!),
-        3. vasakule ja paremale nuppud, mis on seotud ning kast2'ga (Tere tulrmast!),
-        4.  toogle Piltis
+            <ul>
+                <li>draggable pilt 'Lipp' (draggable),</li>
+                <li>nuppud kuva ja peida, mis on seotud kast1'ga (Tere tulrmast!) (show, hide),</li>
+                <li>vasakule ja paremale nuppud, mis on seotud ning kast2'ga (Tere tulrmast!) (animate),</li>
+                <li>toggle Piltis (toggle)</li>
+                <li>Vihjed on: Eesti lipp, nupp 'vajuta siin', nupp '<---', nupp '--->', nupp 'Peida' ja nupp 'Kuva'</li>
+            </ul>
+        </div>
+    </section>
+
+
+
+    <section id="kasutusjuhend">
+        <h2>jQuery kasusutusjuhend</h2>
+        <div>
+            <ul>
+                <li><input type="button" class="vihjemull" title="kui sa vajutad, siis Tere tulemast! blokk liikub vasaküle" value="<---" id="vasakule" style="display: none" onclick="$('#kast1, h2, p').animate({left:'0px'}, 1000);
+$(this).hide();
+$('#paremale').show();
+">
+                    <input type="button" class="vihjemull" title="kui sa vajutad, siis Tere tulemast! blokk liikub paremale" value="--->" id="paremale" onclick="$('#kast1, h2, p').animate({left:'600px'}, 1000)
+$(this).hide();
+$('#vasakule').show();
+">
+                    <input type="button" class="vihjemull" title="kui sa vajutad, siis Tere tulemast! blokk peidab"value="Peida" id="peida" >
+                    <input type="button" class="vihjemull" title="kui sa vajutad, siis Tere tulemast! blokk kuvab" value="Kuva" id="kuva">
+                </li>
+                <li>Veebilehel on rakendatud mitmed efektid! Proovi neid!</li>
+                <li>teksti värvi muutmine (animate, mouseenter, mouseleave)</li>
+                <li>Liikumine ekraanil (animate)</li>
+                <li>JQuery sektdioon peitmine/nähtamine (Toggle)</li>
+                <li>elementide lohistamine (draggable)</li>
+            </ul>
         </div>
     </section>
 
