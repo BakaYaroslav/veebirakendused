@@ -50,17 +50,18 @@ header {
      left: 80pt;
  }
 /*nav menüü*/
-nav ul{
-    list-style-type: none; /*täpp võtab ära*/
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
 
-}
 nav ul li{
     float: left;
 }
@@ -111,9 +112,6 @@ section#kast2 {
     position: absolute;
     top: 605px;
     left: 20px;
-
-
-
 }
 
 section#kast3 {
@@ -220,7 +218,7 @@ section#kast7{
 
 section#selgitus{
     position: absolute;
-    top: 500px;
+    top: 450px;
     right: 50px;
     font-family: "Cascadia Mono", monospace;
 }
@@ -282,6 +280,7 @@ input {
 a {
     text-decoration:none;
 }
+
 /* vihjemull */
 #vihje {
     position: absolute;
